@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ATM</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  </head>
+  <body>
+
+    <h1>ATM</h1>
+
+    <form id="atm" action="#" method="post">
+
+      <select name="choice" id="choice">
+        <option selected>-- select choice --</option>
+        <option value="deposit">deposit</option>
+        <option value="withdrawal">withdrawal</option>
+      </select>
+
+      <input type="text" id="amount" name="amount" placeholder="amount">
+
+      <input id="submit" type="submit" value="submit">
+    </form>
+
+    <p id="balance">balance: $0.0</p>
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="js/atm.js"></script>
+  </body>
+</html>
