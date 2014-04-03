@@ -7,50 +7,50 @@ $(function(){
       $submitBtn     =   $('#submit'),
       $atmForm       =   $('#atm');
 
-    function do_transaction(action) {
+  function do_transaction(action) {
 
-      var amount = parseFloat($amountInput.val());
+    var amount = parseFloat($amountInput.val());
 
-      if (isNaN(amount) || amount === '') {
-        $balanceArea.text('Fool don\'t be playin!');
+    if (isNaN(amount) || amount === '') {
+      $balanceArea.text('Fool don\'t be playin!');
+    } 
+    else {
+      if(action === 'deposit') {
+        balance += amount;
       } 
-      else {
-        if(action === 'deposit') {
-          balance += amount;
-        } 
-        else if (action === 'withdrawal') {
-          balance -= amount;
-        }
-        $balanceArea.text('balance: $'+balance);
+      else if (action === 'withdrawal') {
+        balance -= amount;
       }
+      $balanceArea.text('balance: $'+balance);
     }
+  }
 
-    $atmForm.submit(function(event) {
+  $atmForm.submit(function(event) {
 
-      var choice = $choiceSelect.val();
+    var choice = $choiceSelect.val();
 
-      do_transaction(choice);
+    do_transaction(choice);
 
-      event.preventDefault();
-    });
+    event.preventDefault();
+  });
 
-    ////////// Select Menu Aesthetics //////////
+  ////////// Select Menu Aesthetics //////////
 
-    $amountInput.hide();
-    $submitBtn.hide();
+  $amountInput.hide();
+  $submitBtn.hide();
 
-    $choiceSelect.change(function() {
+  $choiceSelect.change(function() {
 
-      var choice = $choiceSelect.val();
+    var choice = $choiceSelect.val();
 
-      if (choice === 'deposit' || choice === 'withdrawal') {
-        $amountInput.show().val('');
-        $submitBtn.show();
-      } 
-      else {
-        $amountInput.hide().val('');
-        $submitBtn.hide();
-      }
-    });
+    if (choice === 'deposit' || choice === 'withdrawal') {
+      $amountInput.show().val('');
+      $submitBtn.show();
+    } 
+    else {
+      $amountInput.hide().val('');
+      $submitBtn.hide();
+    }
+  });
 
 });
