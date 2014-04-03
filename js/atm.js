@@ -1,18 +1,18 @@
 $(function(){
 
-  var balance       =   0.0,
-      amountInput   =   $('#amount'),
-      balanceArea   =   $('#balance'),
-      choiceSelect  =   $('#choice'),
-      submitBtn     =   $('#submit'),
-      atmForm       =   $('#atm');
+  var balance        =   0.0,
+      $amountInput   =   $('#amount'),
+      $balanceArea   =   $('#balance'),
+      $choiceSelect  =   $('#choice'),
+      $submitBtn     =   $('#submit'),
+      $atmForm       =   $('#atm');
 
     function do_transaction(action) {
 
-      var amount = parseFloat(amountInput.val());
+      var amount = parseFloat($amountInput.val());
 
       if (isNaN(amount) || amount === '') {
-        balanceArea.text('Fool don\'t be playin!');
+        $balanceArea.text('Fool don\'t be playin!');
       } 
       else {
         if(action === 'deposit') {
@@ -21,39 +21,35 @@ $(function(){
         else if (action === 'withdrawal') {
           balance -= amount;
         }
-        balanceArea.text('balance: $'+balance);
+        $balanceArea.text('balance: $'+balance);
       }
     }
 
-    atmForm.submit(function() {
+    $atmForm.submit(function(event) {
 
-      var choice = choiceSelect.val();
+      var choice = $choiceSelect.val();
 
-      if (choice === 'deposit') {
-        do_transaction(choice);
-      } 
-      else if (choice === 'withdrawal') {
-        do_transaction(choice);
-      }
-      return false;
+      do_transaction(choice);
+
+      event.preventDefault();
     });
 
     ////////// Select Menu Aesthetics //////////
 
-    amountInput.hide();
-    submitBtn.hide();
+    $amountInput.hide();
+    $submitBtn.hide();
 
-    choiceSelect.change(function() {
+    $choiceSelect.change(function() {
 
-      var choice = choiceSelect.val();
+      var choice = $choiceSelect.val();
 
       if (choice === 'deposit' || choice === 'withdrawal') {
-        amountInput.show().val('');
-        submitBtn.show();
+        $amountInput.show().val('');
+        $submitBtn.show();
       } 
       else {
-        amountInput.hide().val('');
-        submitBtn.hide();
+        $amountInput.hide().val('');
+        $submitBtn.hide();
       }
     });
 
