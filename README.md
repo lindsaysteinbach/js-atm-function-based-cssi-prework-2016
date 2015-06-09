@@ -5,7 +5,7 @@ tags: jquery, functions, atm
 
 # Code Challenge 11 - ATM (functional version)
 
-This challenge asks that yu build a functioning ATM that allows users to select from deposit or withdraw to add and subtract from their balance. The current balance should be displayed below and update with each transaction.
+This challenge asks that you to build a functioning ATM that allows a user to select from deposit or withdraw to add and subtract from their balance. The current balance should be displayed below and update with each transaction.
 
 ## Tasks
 
