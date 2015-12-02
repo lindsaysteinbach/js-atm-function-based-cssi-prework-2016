@@ -13,3 +13,5 @@ This challenge asks that you to build a functioning ATM that allows a user to se
 Bonus: style the select menu to trigger showing and hiding the amount input and submit button depending on if they are needed for the selection.
 
 Make use of your knowledge of functions to make this work!
+
+<a href='https://learn.co/lessons/js-atm-function-based' data-visibility='hidden'>View this lesson on Learn.co</a>
