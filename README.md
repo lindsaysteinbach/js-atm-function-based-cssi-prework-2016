@@ -14,4 +14,4 @@ Bonus: style the select menu to trigger showing and hiding the amount input and 
 
 Make use of your knowledge of functions to make this work!
 
-<a href='https://learn.co/lessons/js-atm-function-based' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-atm-function-based' title='Code Challenge 11 - ATM (functional version)'>Code Challenge 11 - ATM (functional version)</a> on Learn.co and start learning to code for free.</p>
